@@ -44,12 +44,20 @@ export default {
     '@nuxtjs/auth-next',
   ],
 
-  auth: {
+
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  axios: {
+    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
+    baseURL: '/',
+  },
+
+   auth: {
   strategies: {
     social: {
       scheme: 'oauth2',
       endpoints: {
-        authorization: 'https://authorization-server.com/authorize?response_type=code&client_id=tVG5_d0BJqoNGgKFNr4aWSX5&redirect_uri=https://www.oauth.com/playground/authorization-code.html&scope=photo+offline_access&state=KYfd5MwhMLhUMusv',        token: undefined,
+        authorization: 'https://betezadi.ir/login',
+                token: undefined,
         userInfo: 'https://www.googleapis.com/oauth2/v3/userinfo',
         logout: 'https://example.com/logout'
       },
@@ -76,15 +84,22 @@ export default {
       responseMode: '',
       acrValues: '',
       // autoLogout: false
+    },
+    oidc: {
+      scheme: 'openIDConnect',
+      callbackUri: 'https://localhost:3000/callback',
+      clientId: 'CapAlertMind',
+      clientSecret: 'xyz',
+      scope: ['openid','full_access', 'admin','profile','email','phone','address'],
+      state: '7aa0efae80db09c540136f009a3ad25f19e51046',
+      responseType: 'code',
+      endpoints: {
+        // configuration: 'http://localhost:3000/.well-known/openid-configuration',
+        configuration: 'https://betezadi.ir/.well-known/openid-configuration',
+      },
     }
   }
 },
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
-  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

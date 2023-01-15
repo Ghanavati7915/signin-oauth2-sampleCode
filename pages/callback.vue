@@ -1,12 +1,12 @@
 <template>
     <div>
-        <h2> Hello Page 2</h2>
+        <h2> Hello Page CallBack</h2>
         <nuxt-link to="/"> Page 1 </nuxt-link>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Page2',
+    name: 'callback',
 }
 </script>

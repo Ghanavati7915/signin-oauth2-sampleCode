@@ -1,0 +1,21 @@
+{
+  "issuer": "https://betezadi.ir/",
+  "authorization_endpoint": "https://betezadi.ir/oauth/auth",
+  "token_endpoint": "https://b.betezadi.ir/oauth/token",
+  "userinfo_endpoint": "https://b.betezadi.ir/userinfo",
+  "scopes_supported": [
+  "openid",
+  "email",
+    "profile",
+  "full_access",
+    "admin"
+  ],
+  "response_types_supported": [
+    "code",
+    "token"
+  ],
+   "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "client_secret_basic"
+   ]
+}

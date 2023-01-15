@@ -1,6 +1,7 @@
 <template>
   <div>
-    <button @click="doLogin"> LOGIN </button>
+    <button @click="doLogin"> OAuth2 </button>
+    <button @click="doOpenIDConnect"> Open ID Connect </button>
   </div>
 </template>
 
@@ -11,6 +12,9 @@ export default {
 
     doLogin() {
       this.$auth.loginWith('social')
+    },
+    doOpenIDConnect() {
+      this.$auth.loginWith('oidc')
     }
   }
 }
